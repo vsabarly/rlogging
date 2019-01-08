@@ -12,7 +12,7 @@ PrintLogMessage <- function(..., domain=NULL, level) {
     }
 
     if (!is.null(logfile)) {
-        cat(timestamp, unlist(list(...)), "\n", file=logfile, sep="", append=TRUE)
+        cat(timestamp, unlist(lapply(list(...), as.character)), "\n", file=logfile, sep="", append=TRUE)
     }
 
 }
